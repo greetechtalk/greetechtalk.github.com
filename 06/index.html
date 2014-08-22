@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GREE Tech Talk #06 : Practical Go</title>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="Golang、みなさまと一緒にGoでの実践的な運用について考えてみたいと思います。" name="description">
+  <meta content="実践的、Go、泥臭い、運用、開発" name="keywords">
+  <meta content="GREE Tech Talk #06 : Practical Go" property="og:title">
+  <meta content="website" property="og:type">
+  <meta content="./images/logo.png" property="og:image">
+  <meta content="http://techtalk.labs.gree.jp/06/" property="og:url">
+  <meta contentf="Golang、みなさまと一緒にGoでの実践的な運用について考えてみたいと思います。" property="og:description">
+  <link href="stylesheets/foundation.min.css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="stylesheets/styles.css" media="all" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="row">
+  <div class="ten columns">
+	<h1><img width="400" src="./images/GREE_TT_logo_yoko06.png" alt="Practical Go" /></h1>
+  </div>
+  <div class="two columns">
+    <p style="padding-top: 20px; text-align: right;"><a href="en.html">English</a></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="twelve columns">
+    <div id="slider" class="hide-for-small">
+      <div class="row">
+        <div class="six columns offset-by-five">
+          <h2></h2>
+          <h3></h3>
+        </div>
+      </div>
+    </div>
+	<div class="twelve columns"><span style="float:right">"<a rel="nofollow" href="http://golang.org/doc/gopher/frontpage.png">frontpage</a>" by <a rel="nofollow" text" href="http://reneefrench.blogspot.com/">Renee French</a>, used under <a rel="nofollow"  href="http://creativecommons.org/licenses/by/3.0/">CC BY</a> / Desaturated from original</span>
+	</div>
+    <hr/>
+  </div>
+  <div class="fb-like" data-href="http://techtalk.labs.gree.jp/06/" data-width="450" data-height="120" data-colorscheme="light" data-layout="standard" data-action="like" data-show-faces="true" data-send="false"></div>
+  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://techtalk.labs.gree.jp/06/"
+     data-via="gree_tech">Tweet</a>
+  <script>!function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "http://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }
+  }(document, "script", "twitter-wjs");</script>
+</div>
+
+<div class="row">
+  <div class="twelve columns">
+    <h2>About</h2>
+
+   <p>GREE Tech Talk6回目のテーマは「Practical Go」です。</p>
+   <p>今回はGo言語での実際の開発や運用、実際に出会った問題などをテーマとし、皆様と一緒に実践的なGo言語のノウハウについて学びを深めたいと思います。<br/>
+   さらにInfluxDBのCEO Paul Dixをゲストにお招きし、StartupでのGolangや実際に出会った問題などについてお話いただきます。</p>
+  </div>
+  <div class="six columns">
+    <h3>Date</h3>
+
+    <p>2014年9月24日(水) 開場：18:30、終了：22:00</p>
+
+    <h3>Venue</h3>
+
+    <p>
+      東京都港区六本木6-10-1 六本木ヒルズ森タワー<br>
+      グリー株式会社
+    </p>
+
+    <h3>Schedule</h3>
+    <ul>
+      <li>18:30 開場</li>
+      <li>18:55 開会</li>
+      <li>19:00 peco開発で踏んだ5つの罠（仮）</li>
+      <ul>
+        <li>牧 大輔（LINE株式会社）</li>
+      </ul>
+      <li>19:30 Goの運用周りの泥臭い話（仮）</li>
+      <ul>
+        <li>田沼 修平（グリー株式会社）</li>
+      </ul>
+      <li>20:00 10分間の休憩</li>
+      <li>20:10 Experiences building InfluxDB in golang（仮）</li>
+      <ul>
+        <li>Paul Dix（InfluxDB）</li>
+      </ul>
+      <li>21:00 懇親会</li>
+      <li>22:00 終了</li>
+    </ul>
+
+    <h3>Registration</h3>
+
+    <p><a href="#" class="radius button">参加登録サイト</a></p>
+
+    <p>ハッシュタグ: <a href="https://twitter.com/search?q=greetech06">#greetech06</a></p>
+
+  </div>
+
+  <div class="six columns">
+    <h3>Speakers</h3>
+
+    <div class="speakers">
+      <table>
+        <tr>
+          <td width="180px" class="speaker"><img class="photo" src="./images/lestrrat.jpg"/><br/>牧 大輔<br/><a href="https://twitter.com/lestrrat">@lestrrat</a></td>
+          <td>
+              プログラマー。ブラジル・アメリカで育ち、米Network Appliance Incに勤務後帰国。ライブドア（株）や起業などを経て、現在LINE株式会社エンジニアおよびJapan Perl Association代表理事。2011年 White Camel Award受賞。2014年よりPerl Grants Committeeメンバー。得意分野はPerl/Go、MySQL/PostgreSQL等の主にオープンソース技術を使ったシステム構築。オープンソースで提供されているPerlモジュールの著作も多数。講演や監訳も行う。ハンドルネームはlestrrat。
+          </td>
+        </tr>
+        <tr>
+          <td width="180px" class="speaker"><img class="photo" src="./images/chobi_e.jpg"/><br/>田沼 修平<br/><a href="https://twitter.com/chobi_e">@chobi_e</a></td>
+          <td>
+            PHPが専門ですが使えるものはとことん使いたおすのが信条。主にバックエンドが得意ですが興味がでたらなんでもござれ！GREE開発本部所属。ソーシャルゲームの開発・運用などを経験した後に、サービスの信頼性を高める為の運用・開発に日々取り組んでいます。PHP/PECL拡張のメンテナとしてProtocolBuffersやlibuvなどのバインディングを作成し、その他にも多くのOSS活動に精力的に取り組んでいます。InfluxDBに出会ったことでGoに目覚めてしまいました。
+          </td>
+        </tr>
+        <tr>
+          <td width="180px" class="speaker"><img class="photo" src="./images/pauldix.jpg"/><br/>Paul Dix<br/><a href="https://twitter.com/pauldix">@pauldix</a></td>
+          <td>
+            CEO of @InfluxDB (YC W13), organizer of NYC Machine Learning, series editor for Addison Wesley's Data & Analytics, author of Service Oriented Design with Ruby.
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>
+<footer class="row">
+  <div class="twelve columns">
+    <hr/>
+    <div class="row">
+      <div class="six columns">
+        <p>Copyright &copy; GREE, Inc. All Rights Reserved.</P>
+      </div>
+    </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54005065-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
