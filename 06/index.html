@@ -13,6 +13,7 @@
   <meta contentf="Golang、みなさまと一緒にGoでの実践的な運用について考えてみたいと思います。" property="og:description">
   <link href="stylesheets/foundation.min.css" media="all" rel="stylesheet" type="text/css"/>
   <link href="stylesheets/styles.css" media="all" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
 <div id="fb-root"></div>
@@ -95,7 +96,7 @@
 
     <h3>Registration</h3>
 
-    <p><a onclick="ga('send', 'event', 'regist', 'click_jp', 'atnd')" href="https://atnd.org/events/55464" class="radius button">参加登録サイト</a></p>
+    <p><a href="https://atnd.org/events/55464" class="radius button">参加登録サイト</a></p>
 
     <a class="twitter-timeline" height="300" href="https://twitter.com/hashtag/greetech06"  data-widget-id="502763612570525697">#greetech06件のツイート</a>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
@@ -149,6 +150,16 @@
   ga('require', 'linkid', 'linkid.js');
   ga('send', 'pageview');
 
+</script>
+<script type="text/javascript">jQuery(function() {  
+    jQuery("a").click(function(e) {        
+        var ahref = jQuery(this).attr('href');
+        if (ahref.indexOf("websae.net") != -1 || ahref.indexOf("http") == -1 ) {
+            ga('send', 'event', '内部リンク', 'クリック', ahref);} 
+        else { 
+            ga('send', 'event', '外部リンク', 'クリック', ahref);}
+        });
+    });
 </script>
 </body>
 </html>
