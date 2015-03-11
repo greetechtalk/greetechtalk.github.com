@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GREE Tech Talk #07 : Unity Performance Casual Talk</title>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="みなさまと一緒にネイティブアプリのパフォーマンス向上について考えてみたいと思います。" name="description">
+  <meta content="スマホ、ネイティブ、アプリ、Unity、パフォーマンスチューニング" name="keywords">
+  <meta content="GREE Tech Talk #07 : Unity Performance Casual Talk" property="og:title">
+  <meta content="website" property="og:type">
+  <meta content="./images/logo.png" property="og:image">
+  <meta content="http://techtalk.labs.gree.jp/07/" property="og:url">
+  <meta contentf="みなさまと一緒にネイティブアプリのパフォーマンス向上について考えてみたいと思います。" property="og:description">
+  <link href="stylesheets/foundation.min.css" media="all" rel="stylesheet" type="text/css"/>
+  <link href="stylesheets/styles.css" media="all" rel="stylesheet" type="text/css"/>
+<script async type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="row">
+  <div class="ten columns">
+	<h1><img width="400" src="./images/GREE_TT_logo_yoko07.png" alt="GREE Tech Talk" /></h1>
+  </div>
+  <div class="two columns">
+	  <!--    <p style="padding-top: 20px; text-align: right;"><a href="en.html">English</a></p>-->
+  </div>
+</div>
+
+<div class="row">
+  <div class="twelve columns">
+    <div id="slider" class="hide-for-small">
+      <div class="row">
+        <div class="six columns offset-by-five">
+          <h2></h2>
+          <h3></h3>
+        </div>
+      </div>
+    </div>
+   <hr/>
+  <div class="five columns">
+  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://techtalk.labs.gree.jp/07/" data-via="gree_tech" data-hashtags="greetech07">Tweet</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <div class="fb-like" data-href="http://techtalk.labs.gree.jp/07/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+  　　<a href="http://b.hatena.ne.jp/entry/http://techtalk.labs.gree.jp/07/" class="hatena-bookmark-button" data-hatena-bookmark-title="GREE Tech Talk #07 : Unity Performance Casual Talk" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+    </div>
+  <div class="seven columns">
+  <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
+<script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+    </div>
+  </div>
+  </div>
+
+<div class="row">
+  <div class="twelve columns">
+    <h2>About</h2>
+
+   <p>GREE Tech Talk7回目のテーマは「Unity Performance Casual Talk」です。</p>
+   <p>今回は、ネイティブアプリのパフォーマンス向上について特にUnityに絞った形で、みなさまと一緒に学びを深めたいと思います。</p>
+  </div>
+  <div class="six columns">
+    <h3>Date</h3>
+
+    <p>2015年3月25日(水) 開場：19:00、終了：22:00</p>
+
+    <h3>Venue</h3>
+
+    <p>
+      東京都港区六本木6-10-1 六本木ヒルズ森タワー<br>
+      グリー株式会社
+    </p>
+
+    <h3>Schedule</h3>
+    <ul>
+      <li>19:00 開場</li>
+      <li>19:30 Live2Dの描画の裏側の話(仮)</li>
+      <ul>
+        <li>阿曽 直貴（株式会社Live2D）</li>
+        <li>イラストを立体的に動かすLive2Dという技術について、裏側ではどのような描画を行なっているのかについて簡単に解説します。また、非常に多くのプラットフォームへ移植してきた経験から、パフォーマンスの改善などで気をつけるべき点や苦労した点などをお話しします。</li>
+      </ul>
+      <li>20:00 開発スピードとパフォーマンスの両立(仮)</li>
+      <ul>
+        <li>稲森 亮介（グリー株式会社）</li>
+        <li>Unityでカジュアルゲーム開発した事例をベースに具体例をお話する予定です。</li>
+      </li>
+      </ul>
+      <li>20:30 10分間の休憩</li>
+      <li>20:40 ドローコール伝説の終わり 〜新たなるパフォーマンスの道を求めて〜</li>
+      <ul>
+        <li>大前 広樹（ユニティ・テクノロジーズ・ジャパン合同会社）</li>
+        <li>「ドローコールを減らせ！」そんな声を現場で耳にしたことはありませんか？ドローコールはすでにモバイル環境においてもパフォーマンスを測るのに適切な指標ではなくなっています。Unity5からは、Statisticsから時代遅れの指標であるドローコールが消え去り、新しい情報が表示されるようになりました。このセッションでは、「ドローコールとは一体なんだったのか」の簡単なおさらいと、新しいパフォーマンス指標とその意味、フレームデバッガやプロファイラーを含めた新しいパフォーマンスのためのツールについて紹介します。</li>
+      </ul>
+      <li>21:10 懇親会</li>
+      <li>22:00 終了</li>
+    </ul>
+<!--
+    <h3>niconico LIVE</h3>
+<iframe width="100%" height="176" src="http://live.nicovideo.jp/embed/xxxx" scrolling="no" style="border:solid 1px #CCC;" frameborder="0"><a href="http://live.nicovideo.jp/watch/xxxx">GREE Tech Talk #07 「Unity Performance Casual Talk」</a></iframe>
+-->
+    <h3>Registration</h3>
+
+    <p><a href="https://atnd.org/events/63402" class="radius button">参加登録サイト</a></p>
+
+    <a class="twitter-timeline"  href="https://twitter.com/gree_tech" data-widget-id="570538259269165056">@gree_techさんのツイート</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  </div>
+
+  <div class="six columns">
+    <h3>Speakers</h3>
+
+    <div class="speakers">
+      <table>
+        <tr>
+          <td width="180px" class="speaker"><img class="photo" src="./images/aso.jpg"/><br/>阿曽 直貴</td>
+          <td>
+              株式会社Live2Dのチーフプログラマ。スマホ、Flash、ゲームエンジン、コンシューマゲーム機などいろいろなプラットフォームへエンジンを移植するため、技術的には広く浅く扱ってます。次世代版Live2Dの「Live2D Euclid」を鋭意開発中 !
+          </td>
+        </tr>
+        <tr>
+          <td width="180px" class="speaker"><img class="photo" src="./images/inamori.jpg"/><br/>稲森 亮介<br/><a href="https://twitter.com/gmmsh">@gmmsh</a></td>
+          <td>
+            ディレクター兼プログラマー。2012年2月グリー株式会社入社。探検ドリランド運営を経て、現在はネイティブゲーム開発に携わる。自動化とかレベルエディタとか、楽する為のコードを書くのが好き。
+          </td>
+        </tr>
+        <tr>
+          <td width="180px" class="speaker"><img class="photo" src="./images/omae.jpg"/><br/>大前 広樹<br/><a href="https://twitter.com/pigeon6">@pigeon6</a></td>
+          <td>
+            コンシューマーゲーム企業にてゲーム開発環境の開発に携わり、2009年独立。 現在はUnity Technologiesの日本担当ディレクターとして、ゲーム開発がもっと楽しくなるための活動に注力するほか、BBT大学でゲーム開発について教えたりもする。
+          </td>
+        </tr>
+      </table>
+    </div>
+</div>
+
+</div>
+<footer class="row">
+  <div class="twelve columns">
+    <hr/>
+    <div class="row">
+      <div class="six columns">
+        <p>Copyright &copy; GREE, Inc. All Rights Reserved.</P>
+      </div>
+    </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54005065-1', 'auto');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript">jQuery(function() {  
+    jQuery("a").click(function(e) {        
+        var ahref = jQuery(this).attr('href');
+        if (ahref.indexOf("techtalk.labs.gree.jp") != -1 || ahref.indexOf("http") == -1 ) {
+            ga('send', 'event', '内部リンク', 'クリック', ahref);} 
+        else { 
+            ga('send', 'event', '外部リンク', 'クリック', ahref);}
+        });
+    });
+</script>
+</body>
+</html>
